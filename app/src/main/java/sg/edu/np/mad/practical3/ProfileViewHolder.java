@@ -8,11 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ProfileViewHolder extends RecyclerView.ViewHolder {
     TextView name, desc;
-    ImageView profileIcon;
+    ImageView profileIcon, showIcon;
     public ProfileViewHolder(View itemView){
         super(itemView);
         name = itemView.findViewById(R.id.profileName);
         desc = itemView.findViewById(R.id.profileDescription);
         profileIcon = itemView.findViewById(R.id.iconImage);
+        showIcon = itemView.findViewById(R.id.imageView2);
     }
 }

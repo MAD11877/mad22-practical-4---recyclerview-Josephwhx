@@ -28,7 +28,7 @@ public class ListActivity extends AppCompatActivity implements ProfileListener{
 
         // Create 20 user object in arraylist
         for(int i = 0; i < 20; i++){
-            User user = new User("Name" + generateStringNumber() + "7", "Description: " + generateStringNumber(), i, getFollow());
+            User user = new User("Name" + generateStringNumber(), "Description: " + generateStringNumber(), i, getFollow());
             userList.add(user);
         }
 

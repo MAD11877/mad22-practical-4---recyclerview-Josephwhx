@@ -1,5 +1,6 @@
 package sg.edu.np.mad.practical3;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,18 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileViewHolder> {
         return viewHolder;
     }
     @Override
-    public void onBindViewHolder(ProfileViewHolder holder, int position){
+    public void onBindViewHolder(ProfileViewHolder holder, @SuppressLint("RecyclerView") int position){
         User user = data.get(position);
+        String lastNumber = user.getName().substring(user.getName().length() - 1);
         holder.name.setText(user.getName());
         holder.desc.setText(user.getDescription());
+        if(lastNumber.equals("7")){
+            System.out.println(lastNumber);
+            holder.showIcon.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.showIcon.setVisibility(View.GONE);
+        }
         holder.profileIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
